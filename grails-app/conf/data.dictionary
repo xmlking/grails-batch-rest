@@ -1,0 +1,239 @@
+1001Modifier Code                      C006N00NN                
+1007Modifier Description               C025N00NN                
+1032Transaction Code                   C001N00YN                
+1033Last Change Date                   N008N00NN                
+1041Reserve                            C024N00NN                
+2001Generic Product Packaging Code     C008N00NN                
+2009Package Size                       N008Y03NN                
+2017Package Size Unit of Measure       C002N00YN                
+2019Package Quantity                   N005N00NN                
+2024Unit-Dose/Unit-of-Use Package Code C001N00YN                
+2025Package Description Code           C002N00YN                
+2027Generic Product Identifier         C014N00NN                
+2041Transaction Code                   C001N00YN                
+2042Last Change Date                   N008N00NN                
+2050Reserve                            C015N00NN                
+3001NDC-UPC-HRI                        C011N00NN                
+3012Reserve-1                          C001N00NN                
+3013Modifier Code                      C006N00NN                
+3019Transaction Code                   C001N00YN                
+3020Last Change Date                   N008N00NN                
+3028Reserve-2                          C005N00NN                
+4001Generic Product Packaging Code     C008N00NN                
+4009GPPC Price Code                    C001N00YN                
+4010GPPC Unit Price                    N013Y05NN                
+4023GPPC Eff Date                      N008N00NN                
+4031Transaction Code                   C001N00YN                
+4032Reserve-1                          C005N00NN                
+5001Therapeutic Classification Code    C010N00NN                
+5011Reserve-1                          C004N00NN                
+5015Record Type Code                   C001N00YN                
+5016TC-GPI Name                        C060N00NN                
+5076Reserve-2                          C019N00NN                
+5095Transaction Code                   C001N00YN                
+5096Last Change Date                   N005N00NN                
+6001NDC-UPC-HRI                        C011N00NN                
+6012ID Number Format Code              C001N00YN                
+6013Record Code                        C003N00YN                
+6016Reserve-1                          C005N00NN                
+6021Data Element Code                  C004N00NN                
+6025Data Element Length                N003N00NN                
+6028Reserve-2                          C005N00NN                
+A001NDC-UPC-HRI                        C011N00NN                
+A012ID Number Format Code              C001N00YN                
+A013Record Code                        C003N00YN                
+A016Transaction Code                   C001N00YN                
+A017Sequence Code                      C007N00NN                
+A024Labeler Code                       N005N00NN                
+A029Generic ID Type Code               C001N00YN                
+A030Generic ID Number                  N009N00NN                
+A039DEA Class Code                     C005N00YN                
+A044AHFSCC Therapeutic Class Code      N006N00NN                
+A050Item Status Flag                   C001N00YN                
+A051Local/Systemic Flag                C001N00YN                
+A052TEE Code                           C002N00YN                
+A054Formatted ID Number                C013N00NN                
+A067RX-OTC Indicator Code              C001N00YN                
+A068Third-Party Restriction Code       C001N00YN                
+A069Maintenance Drug Code              C001N00YN                
+A070Dispensing Unit Code               C001N00YN                
+A071Unit-Dose/Unit-of-Use Package Code C001N00YN                
+A072Route of Administration            C002N00YY                
+A074Form Type Code                     C001N00YN                
+A075Dollar Rank Code                   C001N00YN                
+A076Rx Rank Code                       C001N00YN                
+A077Number System Character            C001N00YN                
+A078Secondary ID Format Code           C001N00YN                
+A079Secondary ID Number                C010N00NN                
+A089Multi-Source Code                  C001N00YN                
+A090Brand Name Code                    C001N00YN                
+A091Reimbursement Indicator            C001N00YN                
+A092Internal-External Code             C001N00YN                
+A093Single-Combination Code            C001N00YN                
+A094Storage Condition Code             C001N00YN                
+A095Limited Stability Code             C001N00YN                
+A096Last Change Date                   N005N00NN                
+C001NDC-UPC-HRI                        C011N00NN                
+C012ID Number Format Code              C001N00YN                
+C013Record Code                        C003N00YN                
+C016Transaction Code                   C001N00YN                
+C017Old NDC-UPC-HRI                    C011N00NN                
+C028Reserve-1                          C001N00NN                
+C029Old Formatted Id Number            C013N00NN                
+C042Old Eff Date                       N005N00NN                
+C047New NDC-UPC-HRI                    C011N00NN                
+C058Reserve-2                          C001N00NN                
+C059New Formatted Id Number            C013N00NN                
+C072New Eff Date                       N005N00NN                
+C077Reserve-3                          C019N00NN                
+C096Last Change Date                   N005N00NN                
+E001NDC-UPC-HRI                        C011N00NN                
+E012ID Number Format Code              C001N00YN                
+E013Record Code                        C003N00YN                
+E016Transaction Code                   C001N00YN                
+E017Product Name                       C025N00NN                
+E042Product Name Extension             C035N00NN                
+E077Reserve-1                          C008N00NN                
+E085Allergy Pattern Code               N004N00NN                
+E089Reserve-2                          C002N00NN                
+E091PPG Indicator Code                 C001N00YN                
+E092HFPG Indicator Code                C001N00YN                
+E093Labeler Type Code                  C001N00YN                
+E094Pricing Spread Code                C001N00YN                
+E095Reserve-3                          C001N00NN                
+E096Last Change Date                   N005N00NN                
+G001NDC-UPC-HRI                        C011N00NN                
+G012ID Number Format Code              C001N00YN                
+G013Record Code                        C003N00YN                
+G016Transaction Code                   C001N00YN                
+G017Generic Product Identifier         C014N00NN                
+G031Reserve                            C005N00NN                
+G036GPI Generic Name                   C060N00NN                
+G096Last Change Date                   N005N00NN                
+J001NDC-UPC-HRI                        C011N00NN                
+J012ID Number Format Code              C001N00YN                
+J013Record Code                        C003N00YN                
+J016Transaction Code                   C001N00YN                
+J017Manufacturer's (Labeler) Name      C030N00NN                
+J047Manufacturer's Abbreviated Name    C010N00NN                
+J057Product Description Abbreviation   C025N00NN                
+J082Drug Name Code                     C006N00NN                
+J088Generic Product Packaging Code     C008N00NN                
+J096Last Change Date                   N005N00NN                
+L001NDC-UPC-HRI                        C011N00NN                
+L012ID Number Format Code              C001N00YN                
+L013Record Code                        C003N00YN                
+L016Transaction Code                   C001N00YN                
+L017Reserve-1                          C023N00NN                
+L040Dosage Form                        C004N00YY                
+L044Package Size                       N008Y03NN                
+L052Package Size Unit of Measure       C002N00YN                
+L054Package Quantity                   N005N00NN                
+L059Repackage Code                     C001N00YN                
+L060Total Package Quantity             N012Y03NN                
+L072DESI Code                          C001N00YN                
+L073Package Description                C010N00NN                
+L083Reserve-2                          C006N00NN                
+L089Next-Smaller NDC Suffix Number     C002N00NN                
+L091Next-Larger NDC Suffix Number      C002N00NN                
+L093Innerpack Code                     C001N00YN                
+L094Clinic Pack Code                   C001N00YN                
+L095Reserve-3                          C001N00NN                
+L096Last Change Date                   N005N00NN                
+M001NDC-UPC-HRI                        C011N00NN                
+M012ID Number Format Code              C001N00YN                
+M013Record Code                        C003N00YN                
+M016Transaction Code                   C001N00YN                
+M017Strength                           N013Y05NN                
+M030Strength Unit Measure              C011N00NN                
+M041Limited Dist Code                  C002N00YN                
+M043Extended AHFS Thera Class Code     N008N00NN                
+M051Inactive Date                      N008N00NN                
+M059Reserve                            C037N00NN                
+M096Last Change Date                   N005N00NN                
+P001NDC-UPC-HRI                        C011N00NN                
+P012ID Number Format Code              C001N00YN                
+P013Record Code                        C003N00YN                
+P016Transaction Code                   C001N00YN                
+P017Ingredient Generic ID Type Code    C001N00YN                
+P018Ingredient Generic ID Number       N009N00NN                
+P027Ingredient Strength                N013Y05NN                
+P040Strength Unit Measure              C011N00NN                
+P051Generic Ingredient Name            C040N00NN                
+P091Active/Inactive Ingredient Flag    C001N00YN                
+P092Reserve                            C004N00NN                
+P096Last Change Date                   N005N00NN                
+Q001NDC-UPC-HRI                        C011N00NN                
+Q012ID Number Format Code              C001N00YN                
+Q013Record Code                        C003N00YN                
+Q016Transaction Code                   C001N00YN                
+Q017Reserve-1                          C001N00NN                
+Q018WAC Package Price                  N010Y02NN                
+Q028WAC Unit Price                     N013Y05NN                
+Q041Effective Date                     N008N00NN                
+Q049Older WAC Pkg Price                N010Y02NN                
+Q059Older WAC Unit Price               N013Y05NN                
+Q072Older WAC Eff Date                 N008N00NN                
+Q080Reserve-2                          C016N00NN                
+Q096Last Change Date                   N005N00NN                
+R001NDC-UPC-HRI                        C011N00NN                
+R012ID Number Format Code              C001N00YN                
+R013Record Code                        C003N00YN                
+R016Transaction Code                   C001N00YN                
+R017AWP Indicator Code                 C001N00YN                
+R018AWP Package Price                  N010Y02NN                
+R028AWP Unit Price                     N013Y05NN                
+R041AWP Effective Date                 N008N00NN                
+R049Older AWP Package Price            N010Y02NN                
+R059Older AWP Unit Price               N013Y05NN                
+R072Older AWP Effective Date           N008N00NN                
+R080Reserve                            C016N00NN                
+R096Last Change Date                   N005N00NN                
+S001NDC-UPC-HRI                        C011N00NN                
+S012ID Number Format Code              C001N00YN                
+S013Record Code                        C003N00YN                
+S016Transaction Code                   C001N00YN                
+S017Reserve-1                          C001N00NN                
+S018DP Package Price                   N010Y02NN                
+S028DP Unit Price                      N013Y05NN                
+S041DP Effective Date                  N008N00NN                
+S049Older DP Package Price             N010Y02NN                
+S059Older DP Unit Price                N013Y05NN                
+S072Older DP Effective Date            N008N00NN                
+S080Reserve-2                          C016N00NN                
+S096Last Change Date                   N005N00NN                
+T001NDC-UPC-HRI                        C011N00NN                
+T012ID Number Format Code              C001N00YN                
+T013Record Code                        C003N00YN                
+T016Transaction Code                   C001N00YN                
+T017Reserve-1                          C001N00NN                
+T018CMS FUL Price                      N013Y05NN                
+T031CMS FUL Price Eff Date             N008N00NN                
+T0391st Oldest CMS FUL Price           N013Y05NN                
+T0521st Oldest CMS FUL Eff Dt          N008N00NN                
+T0602nd Oldest CMS FUL Price           N013Y05NN                
+T0732nd Oldest CMS FUL Eff Dt          N008N00NN                
+T081Reserve-2                          C015N00NN                
+T096Last Change Date                   N005N00NN                
+W001Record Type                        C003N00NN                
+W004Reserve-1                          C001N00NN                
+W005Sequence Number                    N003N00NN                
+W008Reserve-2                          C001N00NN                
+W009Comment Marker                     C001N00NN                
+W010Data or Comment                    C087N00NN                
+X001ReadMe Text Line                   C080N00NN                
+Y001Field Identifier                   C004N00NN                
+Y005Field Description                  C035N00NN                
+Y040Field Type                         C001N00YN                
+Y041Field Length                       N003N00NN                
+Y044Implied Decimal Flag               C001N00YN                
+Y045Decimal Places                     N002N00NN                
+Y047Field Validation Flag              C001N00YN                
+Y048Field Abbreviation Flag            C001N00YN                
+Y049Reserve                            C016N00NN                
+Z001Field Identifier                   C004N00NN                
+Z005Field Value                        C015N00NN                
+Z020Language Code                      N002N00YN                
+Z022Value Description                  C040N00NN                
+Z062Value Abbreviation                 C015N00NN                
+Z077Reserve                            C020N00NN                
