@@ -19,7 +19,7 @@ abstract class RecordType implements Comparable {
     String 	lastChangeDate      //Last Change Date                   N005N00NN
     static constraints = {
         recordCode size: 1..3//, blank: false
-        lastChangeDate size:1..1
+        transactionCode size:1..1
         lastChangeDate size:5..5
     }
     static mapping = {
