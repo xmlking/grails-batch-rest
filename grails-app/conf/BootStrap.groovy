@@ -1,7 +1,13 @@
 import org.sumo.apiapp.security.*
+import org.sumo.apiapp.WebLogAppender
 class BootStrap {
 
+    def brokerMessagingTemplate
+
     def init = { servletContext ->
+        // for WebLogAppender
+        WebLogAppender.brokerMessagingTemplate = brokerMessagingTemplate
+        WebLogAppender.appInitialized = true
 
         // Check whether the test data already exists.
         if (!User.count()) {

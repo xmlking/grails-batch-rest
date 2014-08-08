@@ -104,6 +104,16 @@ log4j.main = {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
 
+    appenders {
+        appender new org.sumo.apiapp.WebLogAppender(
+                source:'apiApp', name: 'webLogAppender',
+                layout:new org.apache.log4j.EnhancedPatternLayout(conversionPattern: '%d [%t] %-5p %c{2} - %m'))
+        console name:'stdout'
+    }
+    root {
+        info 'stdout', 'webLogAppender'
+    }
+
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
            'org.codehaus.groovy.grails.web.sitemesh',       // layouts
@@ -191,6 +201,8 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/':                              ['permitAll'],
         '/index':                         ['permitAll'],
         '/index.gsp':                     ['permitAll'],
+        '/stomp/**': 			          ['permitAll'], //TODO: ROLE_USER not working. redirect login page ever after successfully logged-in/
+        '/api/**':                        ['ROLE_USER'],
         '/assets/**':                     ['permitAll'],
         '/**/js/**':                      ['permitAll'],
         '/**/css/**':                     ['permitAll'],
@@ -203,8 +215,6 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/admin/**':       			  	  ['ROLE_BUSINESS_ADMIN'],
         '/grails-errorhandler/**': 	      ['permitAll'],
         '/grails/error/**':        	      ['permitAll'],
-        '/api/**':                        ['ROLE_USER'],
-        '/app/**':                        ['permitAll'],
         '/platformTools/**':              ['ROLE_DATA_ADMIN'],
         '/springBatch*/**':               ['ROLE_DATA_ADMIN'],
         '/batch/**': 			          ['ROLE_DATA_ADMIN']

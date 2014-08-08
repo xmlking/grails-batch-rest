@@ -7,6 +7,10 @@ grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
+//TODO remove these two lines when moved to Tomcat 8
+grails.tomcat.nio = true
+grails.tomcat.scan.enabled = true
+
 grails.project.fork = [
     // configure settings for compilation JVM, note that if you alter the Groovy version forked compilation is required
     //  compile: [maxMemory: 256, minMemory: 64, debug: false, maxPerm: 256, daemon:true],
@@ -52,11 +56,11 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         // runtime 'mysql:mysql-connector-java:5.1.29'
         // runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
-        test "org.grails:grails-datastore-test-support:1.0-grails-2.4"
+        test "org.grails:grails-datastore-test-support:1.0.1-grails-2.4"
         // TODO temp :  remove this block start
         def springModules = ['aop','aspects','beans','context',
                              'context-support','core','expression','jdbc','orm','test','tx','web','webmvc']
-        def springVersion = '4.0.5.RELEASE'
+        def springVersion = '4.0.6.RELEASE'
         def springDeps = springModules.collect { "org.springframework:spring-${it}:${springVersion}".toString() }
         springDeps.each {
             compile it
@@ -66,12 +70,13 @@ grails.project.dependency.resolution = {
 
     plugins {
         // plugins for the build system only
-        build ":tomcat:7.0.54"
+        build ":tomcat:7.0.54"//7.0.54
 
         // plugins for the compile step
         compile ":scaffolding:2.1.2"
         compile ':cache:1.1.7'
-        compile ":asset-pipeline:1.8.11"
+        compile ":asset-pipeline:1.9.6"
+        compile ":spring-websocket:latest.release" //1.0.0
 
         compile ':spring-security-core:latest.release' //2.0-RC3
         compile ':spring-security-ldap:latest.release' //2.0-RC2
@@ -82,7 +87,7 @@ grails.project.dependency.resolution = {
         // compile ":mongodb:latest.release" //TODO enable mongo in resource.groovy , Drug & RecordType when you enabling mongodb plugin
 
         // plugins needed at runtime but not for compilation
-        runtime ":hibernate4:4.3.5.4" // or ":hibernate:3.6.10.16"
+        runtime ":hibernate4:4.3.5.5" // or ":hibernate:3.6.10.16"
         runtime ":database-migration:1.4.0"
         runtime ":jquery:1.11.1"
 
