@@ -9,7 +9,7 @@ abstract class RecordType implements Comparable {
 //    static mapWith = "mongo" //enable/disable mongoTransactionManager in resources.groovy if mongo persistence is enabled/disabled
     static belongsTo = [drug: Drug]
 
-    Integer recordCode          //Record Code                        C003N00YN
+    String  recordCode          //Record Code                        C003N00YN
     String 	transactionCode     //Transaction Code                   C001N00YN
     //Truncated Julian Day (TJD)
 //    @BindUsing({
