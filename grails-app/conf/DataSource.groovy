@@ -6,6 +6,7 @@ dataSource {
     password = ""
 }
 hibernate {
+    flush.mode = 'manual'
     use_sql_comments = true //SUMO
     cache.use_second_level_cache = true
     cache.use_query_cache = false
