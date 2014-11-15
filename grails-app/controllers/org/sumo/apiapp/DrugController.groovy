@@ -17,14 +17,14 @@ class DrugController extends RestfulController<Drug> {
     }
 
     @Override
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
+    def index(Integer pageSize) {
+        params.pageSize = Math.min(pageSize ?: 10, 100)
         // We pass which fields to be rendered with the includes attributes,
         // we exclude the class property for all responses. ***when includes are defined excludes are ignored.
         //params.fetch = [recordTypeRs:"eager"] from params.fields???
         respond resource.list(params),
                 [includes: includeFields, excludes: ['class', 'errors', 'version'],
-                 metadata: [total: countResources(), psize: params.max, offset: params.offset?:0],
+                 metadata: [total: countResources(), pageSize: params.pageSize, offset: params.offset?:0, facets:[]],
                  model: [("${resourceName}InstanceCount".toString()): countResources()]]
     }
 
@@ -39,8 +39,8 @@ class DrugController extends RestfulController<Drug> {
         params.fields?.tokenize(',')
     }
 
-    def search(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
+    def search(Integer pageSize) {
+        params.pageSize = Math.min(pageSize ?: 10, 100)
         def c = Drug.createCriteria()
         def results = c.list(params) {
             //Your criteria here with params.q
@@ -54,7 +54,7 @@ class DrugController extends RestfulController<Drug> {
         def total = results.totalCount
         respond results,
                 [includes: includeFields, excludes: ['class', 'errors', 'version'],
-                 metadata: [total: total, psize: params.max, offset: params.offset?:0],
+                 metadata: [total: total, pageSize: params.pageSize, offset: params.offset?:0, facets:[]],
                  model: [("${resourceName}InstanceCount".toString()): total]]
     }
 

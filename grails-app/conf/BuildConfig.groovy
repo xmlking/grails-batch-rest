@@ -3,13 +3,9 @@ grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
 grails.project.work.dir = "target/work"
-grails.project.target.level = 1.6
-grails.project.source.level = 1.6
+grails.project.target.level = 1.7
+grails.project.source.level = 1.7
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
-
-//TODO remove these two lines when moved to Tomcat 8
-grails.tomcat.nio = true
-grails.tomcat.scan.enabled = true
 
 grails.project.fork = [
     // configure settings for compilation JVM, note that if you alter the Groovy version forked compilation is required
@@ -70,28 +66,28 @@ grails.project.dependency.resolution = {
 
     plugins {
         // plugins for the build system only
-        build ":tomcat:7.0.54"//7.0.54
+        build ":tomcat:8.0.14.1" //8.0.14.1
 
         // plugins for the compile step
-        compile ":scaffolding:2.1.2"
-        compile ':cache:1.1.7'
-        compile ":asset-pipeline:1.9.6"
-        compile ":spring-websocket:latest.release" //1.0.0
+        compile ":scaffolding:2.1.0" //2.1.0
+        compile ':cache:1.1.8' //1.1.8
+        compile ":asset-pipeline:1.9.9" //1.9.9
+        compile ":spring-websocket:1.2.0" //1.2.0
 
-        compile ':spring-security-core:latest.release' //2.0-RC3
-        compile ':spring-security-ldap:latest.release' //2.0-RC2
+        compile ':spring-security-core:2.0-RC3' //2.0-RC3
+        compile ':spring-security-ldap:2.0-RC2' //2.0-RC2
 //        compile ":spring-security-rest:latest.release", {
 //            excludes: 'spring-security-core'
 //        }
-        compile (':spring-batch:2.0.1'){ excludes "ehcache-core", "slf4j-log4j12" } //2.0.1
+        compile (':spring-batch:2.0.9'){ excludes "ehcache-core", "slf4j-log4j12" } //2.0.9
         // compile ":mongodb:latest.release" //TODO enable mongo in resource.groovy , Drug & RecordType when you enabling mongodb plugin
 
         // plugins needed at runtime but not for compilation
-        runtime ":hibernate4:4.3.5.5" // or ":hibernate:3.6.10.16"
-        runtime ":database-migration:1.4.0"
-        runtime ":jquery:1.11.1"
+        runtime ":hibernate4:4.3.6.1" //4.3.6.1 or ":hibernate:3.6.10.16"
+        runtime ":database-migration:1.4.0" //1.4.0
+        runtime ":jquery:1.11.1" //1.11.1
 
-        runtime ":cors:latest.release" //1.1.6
+        runtime ":cors:1.1.6" //1.1.6
 
         // Uncomment these to enable additional asset-pipeline capabilities
         //compile ":sass-asset-pipeline:1.7.4"
