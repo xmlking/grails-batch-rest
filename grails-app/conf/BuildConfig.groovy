@@ -56,7 +56,7 @@ grails.project.dependency.resolution = {
         // TODO temp :  remove this block start
         def springModules = ['aop','aspects','beans','context',
                              'context-support','core','expression','jdbc','orm','test','tx','web','webmvc']
-        def springVersion = '4.0.6.RELEASE'
+        def springVersion = '4.1.5.RELEASE'
         def springDeps = springModules.collect { "org.springframework:spring-${it}:${springVersion}".toString() }
         springDeps.each {
             compile it
@@ -66,24 +66,24 @@ grails.project.dependency.resolution = {
 
     plugins {
         // plugins for the build system only
-        build ":tomcat:8.0.14.1" //8.0.14.1
+        build ":tomcat:8.0.20" //8.0.20
 
         // plugins for the compile step
-        compile ":scaffolding:2.1.0" //2.1.0
+        compile ":scaffolding:2.1.2" //2.1.2
         compile ':cache:1.1.8' //1.1.8
-        compile ":asset-pipeline:1.9.9" //1.9.9
-        compile ":spring-websocket:1.2.0" //1.2.0
+        compile ":asset-pipeline:2.1.5" //2.1.5
+        compile ":spring-websocket:1.3.0" //1.3.0
 
-        compile ':spring-security-core:2.0-RC3' //2.0-RC3
+        compile ':spring-security-core:2.0-RC4' //2.0-RC4
         compile ':spring-security-ldap:2.0-RC2' //2.0-RC2
 //        compile ":spring-security-rest:latest.release", {
 //            excludes: 'spring-security-core'
 //        }
-        compile (':spring-batch:2.0.9'){ excludes "ehcache-core", "slf4j-log4j12" } //2.0.9
+        compile (':spring-batch:2.1.0'){ excludes "ehcache-core", "slf4j-log4j12" } //2.0.9
         // compile ":mongodb:latest.release" //TODO enable mongo in resource.groovy , Drug & RecordType when you enabling mongodb plugin
 
         // plugins needed at runtime but not for compilation
-        runtime ":hibernate4:4.3.6.1" //4.3.6.1 or ":hibernate:3.6.10.16"
+        runtime ":hibernate4:4.3.8.1" //4.3.8.1
         runtime ":database-migration:1.4.0" //1.4.0
         runtime ":jquery:1.11.1" //1.11.1
 

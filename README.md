@@ -7,7 +7,7 @@ Grails Spring Batch, CORS enabled REST API, Spring Security Core/LDAP Demo
 # GVM - Tool for managing Groovy related frameworks  
 curl -s get.gvmtool.net | bash
     
-# Grails
+# install Grails 2.5.x
 gvm install grails
 ```
 

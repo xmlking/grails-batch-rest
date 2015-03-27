@@ -269,4 +269,9 @@ environments {
 //Overriding default behavior, because Angular is not sending X-Requested-With header due to CORS issue.
 grails.plugin.springsecurity.ajaxCheckClosure = { request ->  request.getHeader("Accept")?.equalsIgnoreCase('application/json') }
 
-
+//Grails 2.5.0
+beans {
+    cacheManager {
+        shared = true
+    }
+}
