@@ -19,6 +19,14 @@ beans = {
 //  springConfig.addAlias('persistenceInterceptor', 'mongoPersistenceInterceptor')  //??? FIXME use this when using mongoDB plugin
 //	springConfig.addAlias('transactionManager', 'mongoTransactionManager') //FIXME use this when using mongoDB plugin
 
+    // register Renderers/CollectionRenderers for all domain classes in the application.
+    for (domainClass in grailsApplication.domainClasses) {
+        // "json${domainClass.shortName}CollectionRenderer"(JsonCollectionRenderer, domainClass.clazz)
+        "json${domainClass.shortName}CollectionRenderer"(SumoJsonCollectionRenderer, domainClass.clazz)
+        "json${domainClass.shortName}Renderer"(JsonRenderer, domainClass.clazz)
+        "hal${domainClass.shortName}CollectionRenderer"(HalJsonCollectionRenderer, domainClass.clazz)
+        "hal${domainClass.shortName}Renderer"(HalJsonRenderer, domainClass.clazz)
+    }
 
     userRenderer(JsonRenderer,  User) {
         excludes = ['class', 'password']
@@ -37,15 +45,6 @@ beans = {
     }
     simpleGrantedAuthoritysRenderer(JsonCollectionRenderer,  SimpleGrantedAuthority) {
         excludes = ['class']
-    }
-
-    // register Renderers/CollectionRenderers for all domain classes in the application.
-    for (domainClass in grailsApplication.domainClasses) {
-//        "json${domainClass.shortName}CollectionRenderer"(JsonCollectionRenderer, domainClass.clazz)
-        "json${domainClass.shortName}CollectionRenderer"(SumoJsonCollectionRenderer, domainClass.clazz)
-        "json${domainClass.shortName}Renderer"(JsonRenderer, domainClass.clazz)
-        "hal${domainClass.shortName}CollectionRenderer"(HalJsonCollectionRenderer, domainClass.clazz)
-        "hal${domainClass.shortName}Renderer"(HalJsonRenderer, domainClass.clazz)
     }
 
     userDetailsService(CustomUserDetailsService) {
