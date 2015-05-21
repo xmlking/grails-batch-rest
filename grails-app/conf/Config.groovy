@@ -159,10 +159,12 @@ grails.gorm.default.constraints = {
     myShared(nullable: true, size: 1..20)
 }
 
+// ******************************************************************************
+//                              Spring Security Configuration
+// ******************************************************************************
 
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'org.sumo.apiapp.security.User'
-grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'org.sumo.apiapp.security.UserRole'
 grails.plugin.springsecurity.authority.className = 'org.sumo.apiapp.security.Role'
 
 // Basic Auth: Enable this during testing REST API via curl or RESTClient
@@ -269,9 +271,35 @@ environments {
 //Overriding default behavior, because Angular is not sending X-Requested-With header due to CORS issue.
 grails.plugin.springsecurity.ajaxCheckClosure = { request ->  request.getHeader("Accept")?.equalsIgnoreCase('application/json') }
 
+// Disable Security for testing.
+//grails.plugin.springsecurity.active = false
+
+// ******************************************************************************
+//                              CORS Configuration
+// ******************************************************************************
+cors.expose.headers     ='Content-Type,Content-Range,X-Item-Range'
+
+
+// ******************************************************************************
+//                              Angular Configuration
+// ******************************************************************************
+grails.databinding.dateFormats = ["yyyy-MM-dd'T'hh:mm:ss'Z'", "yyyy-MM-dd'T'hh:mm:ss.SSS'Z'"]
+
+angular.rootUrl = "/api"
+angular.defaultPageSize = 25
+angular.dateFormat = "MM/dd/yyyy"
+
 //Grails 2.5.0
 beans {
     cacheManager {
         shared = true
     }
 }
+
+// Global Mapping for all classes
+grails.mongo.default.mapping = {
+    version false
+    '*'(reference:true)
+}
+
+

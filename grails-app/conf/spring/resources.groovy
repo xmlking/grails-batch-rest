@@ -12,17 +12,22 @@ import org.sumo.apiapp.security.CustomDetailsContextMapper
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority
 
+import org.sumo.apiapp.rest.CustomMarshallerRegistrar
+
 import  org.sumo.apiapp.render.SumoJsonCollectionRenderer
 
 // Place your Spring DSL code here
 beans = {
-//  springConfig.addAlias('persistenceInterceptor', 'mongoPersistenceInterceptor')  //??? FIXME use this when using mongoDB plugin
-//	springConfig.addAlias('transactionManager', 'mongoTransactionManager') //FIXME use this when using mongoDB plugin
+
+    customMarshallerRegistrar(CustomMarshallerRegistrar)
+
+    springConfig.addAlias('persistenceInterceptor', 'mongoPersistenceInterceptor')  //??? FIXME use this when using mongoDB plugin
+	springConfig.addAlias('transactionManager', 'mongoTransactionManager') //FIXME use this when using mongoDB plugin
 
     // register Renderers/CollectionRenderers for all domain classes in the application.
     for (domainClass in grailsApplication.domainClasses) {
-        // "json${domainClass.shortName}CollectionRenderer"(JsonCollectionRenderer, domainClass.clazz)
-        "json${domainClass.shortName}CollectionRenderer"(SumoJsonCollectionRenderer, domainClass.clazz)
+        "json${domainClass.shortName}CollectionRenderer"(JsonCollectionRenderer, domainClass.clazz)
+        // "json${domainClass.shortName}CollectionRenderer"(SumoJsonCollectionRenderer, domainClass.clazz)
         "json${domainClass.shortName}Renderer"(JsonRenderer, domainClass.clazz)
         "hal${domainClass.shortName}CollectionRenderer"(HalJsonCollectionRenderer, domainClass.clazz)
         "hal${domainClass.shortName}Renderer"(HalJsonRenderer, domainClass.clazz)

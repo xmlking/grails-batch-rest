@@ -18,21 +18,19 @@ class DrugController extends RestfulController<Drug> {
 
     @Override
     def index(Integer pageSize) {
-        params.pageSize = Math.min(pageSize ?: 10, 100)
+        params.max = Math.min(pageSize ?: 10, 100)
         // We pass which fields to be rendered with the includes attributes,
         // we exclude the class property for all responses. ***when includes are defined excludes are ignored.
         //params.fetch = [recordTypeRs:"eager"] from params.fields???
         respond resource.list(params),
                 [includes: includeFields, excludes: ['class', 'errors', 'version'],
-                 metadata: [total: countResources(), pageSize: params.pageSize, offset: params.offset?:0, facets:[]],
+                 metadata: [total: countResources(), pageSize: params.max, offset: params.offset?:0, facets:[]],
                  model: [("${resourceName}InstanceCount".toString()): countResources()]]
     }
 
     def show(Drug drug) {
-        JSON.use("deep") {
-            respond drug,
-                    [includes: includeFields, excludes: ['class', 'errors', 'version']]
-        }
+        respond drug,
+                [includes: includeFields, excludes: ['class', 'errors', 'version']]
     }
 
     private getIncludeFields() {

@@ -11,6 +11,11 @@ curl -s get.gvmtool.net | bash
 gvm install grails
 ```
 
+# install MongoDB
+brew install mongodb
+```
+
+
 ### Getting Started
 
 1. Install IDE
@@ -42,6 +47,12 @@ gvm install grails
     clean-all
     ```
 
+6. To start the MongoDB 
+
+    ```bash
+     mongod --config data/mongod.conf
+    ```
+
 6. To start the server in dev mode.
     
     ```bash
@@ -58,10 +69,6 @@ gvm install grails
 
     You can find test username/passwords in [BootStrap.groovy](grails-app/conf/BootStrap.groovy)
 
-### To access DB console
-    http://localhost:8080/apiApp/dbconsole
-    DB URL (in-memory): jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
-    or (persistent file): jdbc:h2:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
 
 ### REST URLs
     http://localhost:8080/apiApp/drugs.json?max=2
@@ -74,3 +81,7 @@ gvm install grails
     http://localhost:8080/apiApp/drugs/1.json
     http://localhost:8080/apiApp/drugs/1.json?fields=ndc,id
     http://localhost:8080/apiApp/drugs/1.json?fields=ndc,id,recordTypeE
+    
+    http://localhost:8080/apiApp/api/type/devices
+    http://localhost:8080/apiApp/api/type/devices?lang=es
+    http://localhost:8080/apiApp/api/type/devices?lang=en

@@ -53,20 +53,12 @@ grails.project.dependency.resolution = {
         // runtime 'mysql:mysql-connector-java:5.1.29'
         // runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
         test "org.grails:grails-datastore-test-support:1.0.1-grails-2.4"
-        // TODO temp :  remove this block start
-        def springModules = ['aop','aspects','beans','context',
-                             'context-support','core','expression','jdbc','orm','test','tx','web','webmvc']
-        def springVersion = '4.1.5.RELEASE'
-        def springDeps = springModules.collect { "org.springframework:spring-${it}:${springVersion}".toString() }
-        springDeps.each {
-            compile it
-        }
-        // TODO temp :  remove this block end
+        compile "net.sf.ehcache:ehcache-core:2.6.11"
     }
 
     plugins {
         // plugins for the build system only
-        build ":tomcat:8.0.20" //8.0.20
+        build ":tomcat:8.0.21" //8.0.21
 
         // plugins for the compile step
         compile ":scaffolding:2.1.2" //2.1.2
@@ -76,23 +68,12 @@ grails.project.dependency.resolution = {
 
         compile ':spring-security-core:2.0-RC4' //2.0-RC4
         compile ':spring-security-ldap:2.0-RC2' //2.0-RC2
-//        compile ":spring-security-rest:latest.release", {
-//            excludes: 'spring-security-core'
-//        }
-        compile (':spring-batch:2.1.0'){ excludes "ehcache-core", "slf4j-log4j12" } //2.0.9
-        // compile ":mongodb:latest.release" //TODO enable mongo in resource.groovy , Drug & RecordType when you enabling mongodb plugin
+
+        compile (':spring-batch:2.1.0'){ excludes "ehcache-core", "slf4j-log4j12" } //2.1.0
+        compile ":mongodb:latest.release"
 
         // plugins needed at runtime but not for compilation
-        runtime ":hibernate4:4.3.8.1" //4.3.8.1
-        runtime ":database-migration:1.4.0" //1.4.0
         runtime ":jquery:1.11.1" //1.11.1
-
-        runtime ":cors:1.1.6" //1.1.6
-
-        // Uncomment these to enable additional asset-pipeline capabilities
-        //compile ":sass-asset-pipeline:1.7.4"
-        //compile ":less-asset-pipeline:1.7.0"
-        //compile ":coffee-asset-pipeline:1.7.0"
-        //compile ":handlebars-asset-pipeline:1.3.0.3"
+        runtime ":cors:1.1.7" //1.1.7
     }
 }

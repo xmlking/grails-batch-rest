@@ -12,6 +12,11 @@ class UrlMappings {
         "/drugs/test403"(controller:"drug",action:"test403")
         "/drugs/search"(controller:"drug",action:"search")
 
+        '/providers'(view: 'provider')
+        '/api/providers'(resources: 'provider')
+
+        "/api/type/$action?"(controller:'type')
+
         "/"(view:"/index")
 
         "401"(controller: "errors", action: "error401")

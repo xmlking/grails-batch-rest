@@ -2,11 +2,13 @@ package org.sumo.apiapp
 
 import groovy.transform.ToString
 import grails.rest.Resource
+import org.bson.types.ObjectId
 
 @ToString(includeNames = true, includeFields = true, includePackage = false, excludes = 'dateCreated,lastUpdated,metaClass')
 @Resource //to add link method for HATEOS rendering
 class Drug {
-//    static mapWith = "mongo" //enable/disable mongoTransactionManager in resources.groovy if mongo persistence is enabled/disabled
+
+    ObjectId id
 
 	String ndc
 
@@ -16,13 +18,6 @@ class Drug {
     RecordTypeJ recordTypeJ
     RecordTypeL recordTypeL
     RecordTypeM recordTypeM
-
-    Collection recordTypeCs
-    Collection recordTypePs
-    Collection recordTypeQs
-    Collection recordTypeRs
-    Collection recordTypeSs
-    Collection recordTypeTs
 
     static embedded = ['recordTypeA', 'recordTypeE', 'recordTypeG', 'recordTypeJ', 'recordTypeL', 'recordTypeM']
     static hasMany = [recordTypePs: RecordTypeP,recordTypeQs: RecordTypeQ,recordTypeRs: RecordTypeR,recordTypeSs: RecordTypeS,recordTypeTs: RecordTypeT,recordTypeCs: RecordTypeC]
@@ -42,7 +37,7 @@ class Drug {
         recordTypeSs cache: true
         recordTypeTs cache: true
 
-        ndc index:'NDC_Idx'
+        ndc index:true
 	}
 
 }

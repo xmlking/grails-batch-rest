@@ -30,9 +30,8 @@ class CustomDetailsContextMapper implements UserDetailsContextMapper {
 
         return new CustomUserDetails(
                 username, "",  true, true, true, true,
-                authorities ?: [NO_ROLE], 12,
+                authorities ?: [NO_ROLE], '12',
                 true, ctx.getStringAttribute("displayName"),
-                ctx.getStringAttribute("title") ,
                 ctx.getStringAttribute("mail"),
                 ctx.getStringAttribute("departmentNumber"),
                 ctx.getStringAttribute("postalCode"),

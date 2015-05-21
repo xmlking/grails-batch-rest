@@ -1,13 +1,13 @@
 package org.sumo.apiapp
 
 import groovy.transform.ToString
+import org.bson.types.ObjectId
 import org.sumo.apiapp.Drug
 
 @ToString(includeNames = true, includeFields = true, includePackage = false, excludes = 'dateCreated,lastUpdated,metaClass')
 abstract class RecordType implements Comparable {
 
-//    static mapWith = "mongo" //enable/disable mongoTransactionManager in resources.groovy if mongo persistence is enabled/disabled
-    static belongsTo = [drug: Drug]
+    ObjectId id
 
     String  recordCode          //Record Code                        C003N00YN
     String 	transactionCode     //Transaction Code                   C001N00YN
@@ -17,6 +17,9 @@ abstract class RecordType implements Comparable {
 //    })
 //    Date 	lastChangeDate      //Last Change Date                   N005N00NN
     String 	lastChangeDate      //Last Change Date                   N005N00NN
+
+    static belongsTo = [drug: Drug]
+
     static constraints = {
         recordCode size: 1..3//, blank: false
         transactionCode size:1..1

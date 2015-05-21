@@ -12,7 +12,6 @@ class CustomUserDetails extends GrailsUser {
 
     final Boolean ldapAuth
     final String displayName
-    final String title
     final String email
     final String departmentNumber
     final String postalCode
@@ -21,8 +20,8 @@ class CustomUserDetails extends GrailsUser {
     CustomUserDetails(String username, String password, boolean enabled,
                       boolean accountNonExpired, boolean credentialsNonExpired, boolean accountNonLocked,
                       Collection<GrantedAuthority> authorities,
-                      long id, Boolean ldapAuth,
-                      String displayName, String title, String email,
+                      Object id, Boolean ldapAuth,
+                      String displayName, String email,
                       String departmentNumber, String postalCode, String uid) {
 
         super(username, password, enabled, accountNonExpired,
@@ -30,7 +29,6 @@ class CustomUserDetails extends GrailsUser {
 
         this.ldapAuth = ldapAuth
         this.displayName = displayName
-        this.title = title
         this.email = email
         this.departmentNumber = departmentNumber
         this.postalCode = postalCode
