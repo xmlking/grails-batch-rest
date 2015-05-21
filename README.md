@@ -9,7 +9,6 @@ curl -s get.gvmtool.net | bash
     
 # install Grails 2.5.x
 gvm install grails
-```
 
 # install MongoDB
 brew install mongodb
