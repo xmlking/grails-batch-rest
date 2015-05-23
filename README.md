@@ -59,11 +59,7 @@ brew install mongodb
     ```
     
 7. To load the database from flat file, run the spring batch job at `http://localhost:8080/apiApp/batch/springBatchJob/list`
- 
-    if you configured dev H2 database to persist to file e.g.,   `jdbc:h2:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE` you don't need to run the batch job every time you start the server. 
-    
-    It may be necessary to remove DB files (debDb.h2.db, debDb.lock.db) first from project folder to re-run the batch job and populate database. 
-
+      
 8. Authentication is configured to use LDAP/AD store first. if LDAP/AD is not available, it will fallback to Database user store.
 
     You can find test username/passwords in [BootStrap.groovy](grails-app/conf/BootStrap.groovy)
